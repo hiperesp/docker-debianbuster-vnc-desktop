@@ -3,7 +3,7 @@ FROM debian:buster-20230522 AS system
 # Install the essential packages + UI + VNC
 RUN apt-get update
 RUN apt-get install -y sudo
-RUN apt-get install -y xfce4 xfce4-terminal dbus-x11
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y xfce4 xfce4-terminal dbus-x11
 RUN apt-get install -y x11vnc xvfb novnc websockify
 RUN apt-get install -y net-tools
 
